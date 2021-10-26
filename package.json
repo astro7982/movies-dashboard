@@ -1,0 +1,19 @@
+{
+  "name": "movies-orig",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Johnathan Campos",
+  "license": "ISC",
+  "dependencies": {
+    "@opentelemetry/instrumentation-http": "^0.26.0",
+    "@splunk/otel": "^0.14.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

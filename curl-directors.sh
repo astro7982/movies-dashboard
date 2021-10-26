@@ -1,0 +1,1 @@
+while true; do curl http://192.168.86.20/directors; sleep 5; done
