@@ -1,5 +1,4 @@
 # Default configuration file for the Linux (deb/rpm) and Windows MSI collector packages
-
 # If the collector is installed without the Linux/Windows installer script, the following
 # environment variables are required to be manually defined or configured below:
 # - SPLUNK_ACCESS_TOKEN: The Splunk access token to authenticate requests
@@ -115,12 +114,12 @@ processors:
   resource/add_environment:
     attributes:
       - action: insert
-        value: TechTalkEnv1
+        value: CloudProduction
         key: deployment.environment
   attributes/newenvironment:
     actions:
       - key: version
-        value: "v2.0.1"
+        value: "v1.0.1"
         action: insert
 exporters:
   # Traces

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JSON Movies Dashboard</title>
+    <style>
+    div, iframe {
+        width: 1000px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: rgb(190, 190, 190);
+        border-radius: 25px;
+    }
+    </style>
+   <!--PASTE Splunk RUM CODE HERE-->
+   <script src="https://cdn.signalfx.com/o11y-gdi-rum/latest/splunk-otel-web.js" crossorigin="anonymous"></script>
+    <script>
+    SplunkRum.init({
+        beaconUrl: "https://rum-ingest.us1.signalfx.com/v1/rum",
+        rumAuth: "FM4c5AQ_lpyjoQ6wFRwczQ",
+        app: "Movies Dashboard",
+        environment: "Test"
+        });
+    </script>
+  </head>
+  <body>
+    <p> 
+       <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;"> JSON Movies Dashboard</h1>
+    </p>
+    <p style="text-align: center;"> 
+        <img src="https://thumbs.gfycat.com/GentleFearlessJellyfish-size_restricted.gif" style="border-radius: 25px; width:250px; height:140px;"> 
+
+    </p>
+
+    <p style="text-align: center; font-family: Arial, Helvetica, sans-serif;">
+        Clicking one of these buttons will display a list of either Movies, Actors, or Directors in JSON format.
+    </p>   
+    
+    <p>
+        <form action="http://localhost/movies" method="get" target="simpleFrame" style="text-align: center;">
+        <input type="submit" value="Get Movies JSON" />
+        </form>
+    </p>
+
+    <p>   
+        <form action="http://localhost/actors" method="get" target="simpleFrame" style="text-align: center;">
+        <input type="submit" value="Get Actors JSON" />
+        </form>  
+    </p>
+
+    <p>   
+        <form action="http://localhost/directors" method="get" target="simpleFrame" style="text-align: center;">
+        <input type="submit" value="Get Directors JSON" />
+        </form>  
+    </p>
+    
+    <div>
+        <iframe name="simpleFrame" id="simpleFrame" style="text-align: center;"></iframe>
+    </div>
+
+</body>
+</html>
