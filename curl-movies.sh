@@ -1,1 +1,1 @@
-while true; do curl http://192.168.86.20/movies; sleep 5; done
+while true; do curl http://<IP OF REMOTE MACHINE OR LOCALHOST HERE>/movies; sleep 5; done
