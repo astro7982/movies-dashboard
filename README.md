@@ -1,4 +1,4 @@
-### Movies Dashboard on NodeJS
+## Movies Dashboard on NodeJS
 
 This NodeJS application will allow you to use the buttons on `main.html` to fetch various different movies, directors, or artists in JSON format. The goal behind fetching this data is to manually generate traffic between each of the services hosting this data. 
 
