@@ -17,7 +17,7 @@ const getUrlContents = (url, fetch) => {
 }
 
 app.get('/movies', async (req, res) => {
-  //fetch data running from moives service
+  //fetch data running from movies service
   const movies = await getUrlContents('http://localhost:3000/movies', require('node-fetch'))
   res.type('json')
   res.send(JSON.stringify({ dashboard: movies }))
