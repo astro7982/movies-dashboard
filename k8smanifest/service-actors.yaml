@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: actors
+spec:
+  type: ClusterIP
+  selector:
+    app: actors 
+  ports:
+  - name: http
+    port: 3002
+    targetPort: 3002

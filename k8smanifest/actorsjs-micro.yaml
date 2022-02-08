@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: actors
+  labels:
+    app: actors  
+spec:
+  containers:
+  - name: actors
+    image: astro7982/actorsjs-micro
+    env:
+    - name: SPLUNK_OTEL_AGENT
+      valueFrom:
+        fieldRef:
+          fieldPath: status.hostIP
+    - name: OTEL_EXPORTER_OTLP_ENDPOINT
+      value: "http://$(SPLUNK_OTEL_AGENT):4317"
+    - name: OTEL_SERVICE_NAME
+      value: "actors"
+    - name: OTEL_RESOURCE_ATTRIBUTES
+      value: "deployment.environment=dev"
+  restartPolicy: OnFailure  

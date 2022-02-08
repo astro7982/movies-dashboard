@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: directors
+  labels:
+    app: directors  
+spec:
+  containers:
+  - name: directors
+    image: astro7982/directorsjs-micro
+    env:
+    - name: SPLUNK_OTEL_AGENT
+      valueFrom:
+        fieldRef:
+          fieldPath: status.hostIP
+    - name: OTEL_EXPORTER_OTLP_ENDPOINT
+      value: "http://$(SPLUNK_OTEL_AGENT):4317"
+    - name: OTEL_SERVICE_NAME
+      value: "directors"
+    - name: OTEL_RESOURCE_ATTRIBUTES
+      value: "deployment.environment=dev"
+  restartPolicy: OnFailure  

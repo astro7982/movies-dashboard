@@ -1,1 +1,1 @@
-while true; do curl http://<IP OF REMOTE MACHINE OR LOCALHOST HERE>/directors; sleep 5; done
+while true; do curl http://<<IP OF HOST with NODEJS RUNNING APP>>/directors; sleep 5; done

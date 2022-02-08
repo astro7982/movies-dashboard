@@ -11,7 +11,15 @@
         border-radius: 25px;
     }
     </style>
-   <!--PASTE Splunk RUM CODE HERE-->
+<script src="https://cdn.signalfx.com/o11y-gdi-rum/latest/splunk-otel-web.js" crossorigin="anonymous"></script>
+<script>
+    SplunkRum.init({
+        beaconUrl: "https://rum-ingest.us1.signalfx.com/v1/rum",
+        rumAuth: "FM4c5AQ_lpyjoQ6wFRwczQ",
+        app: "Movies-Dashboard",
+        environment: "lab"
+        });
+</script>
   </head>
   <body>
     <p> 
@@ -27,19 +35,19 @@
     </p>   
     
     <p>
-        <form action="http://localhost/movies" method="get" target="simpleFrame" style="text-align: center;">
+        <form action="http://192.168.86.20/movies" method="get" target="simpleFrame" style="text-align: center;">
         <input type="submit" value="Get Movies JSON" />
         </form>
     </p>
 
     <p>   
-        <form action="http://localhost/actors" method="get" target="simpleFrame" style="text-align: center;">
+        <form action="http://192.168.86.20/actors" method="get" target="simpleFrame" style="text-align: center;">
         <input type="submit" value="Get Actors JSON" />
         </form>  
     </p>
 
     <p>   
-        <form action="http://localhost/directors" method="get" target="simpleFrame" style="text-align: center;">
+        <form action="http://192.168.86.20/directors" method="get" target="simpleFrame" style="text-align: center;">
         <input type="submit" value="Get Directors JSON" />
         </form>  
     </p>
